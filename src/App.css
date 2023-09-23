@@ -164,3 +164,26 @@ body {
     width: calc(50% - 20px); /* Two tiles per row on mobile */
   }
 }
+
+/* Styl przycisków */
+.button {
+  display: inline-block;
+  padding: 10px 0; /* Równa długość przycisków, usuwając padding poziomy */
+  background-color: var(--fifth);
+  color: white; /* Kolor tekstu na przycisku jest biały */
+  border: none; /* Usuń obramowanie przycisku */
+  width: 100%; /* Pełna szerokość przycisku */
+  text-align: left; /* Wyrównaj tekst do lewej strony */
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Styl przycisku po najechaniu myszką */
+.button:hover {
+  background-color: var(
+    --fourth
+  ); /* Kolor tła przycisku po najechaniu myszką */
+  color: white; /* Kolor tekstu na przycisku po najechaniu myszką */
+}

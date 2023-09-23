@@ -21,12 +21,15 @@ function LeftMenu({ setSelectedModule }) {
       <ul>
         {modules.map((module) => (
           <li key={module.id}>
-            <a href="/dashboard" onClick={() => setSelectedModule(module.id)}>
+            <button
+              className="button"
+              onClick={() => setSelectedModule(module.id)}
+            >
               <div className="menu-item">
                 {module.icon}
                 <span>{module.name}</span>
               </div>
-            </a>
+            </button>
           </li>
         ))}
       </ul>
