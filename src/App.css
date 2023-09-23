@@ -1,38 +1,122 @@
+/* Kolory główne */
+:root {
+  --first: #fff; /* Pierwszy kolor (biały) */
+  --second: #eee; /* Drugi kolor (jasny szary) */
+  --third: #ccc; /* Trzeci kolor (średni szary) */
+  --fourth: #a3a3a3; /* Czwarty kolor (ciemny szary) */
+  --fifth: #4c4c4c; /* Piąty kolor (bardzo ciemny szary) */
+  --border-color: black;
+  --box-shadow-color: rgba(0, 0, 0, 0.2); /* Kolor cienia */
+}
+
+/* Styl ogólny dla aplikacji */
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  height: 100vh;
+}
+
+/* Styl dla nagłówka aplikacji */
+.App-header {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  background-color: var(--first);
+  color: #333; /* Kolor tekstu dostosowany do tła */
+  border-bottom: 1px solid var(--border-color); /* Dodanie borderu na dole */
+  box-shadow: 0px 2px 4px var(--box-shadow-color); /* Dodanie cienia */
+}
+
+/* Styl dla głównego obszaru aplikacji */
+.App-main {
+  display: flex;
+  flex-grow: 1;
+}
+
+/* Styl dla treści aplikacji */
+.App-content {
+  flex-grow: 1;
+  padding: 20px;
+  margin-top: -20px;
+}
+
+/* Styl dla górnego menu */
+.TopMenu {
+  background-color: var(--first);
+  color: #333; /* Kolor tekstu dostosowany do tła */
+  padding: 10px;
+  display: flex;
+  border-bottom: 1px solid var(--border-color); /* Dodanie borderu na dole */
+}
+
+/* Styl dla lewego menu */
+.LeftMenu {
+  background-color: var(--fifth);
+  width: 180px; /* Zwiększenie szerokości menu */
+  padding: 10px;
+  border-right: 1px solid var(--border-color); /* Oddzielenie menu borderem */
+}
+
+.LeftMenu ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.LeftMenu li {
+  margin: 10px 0;
+}
+
+/* Styl dla linków w lewym menu */
+.LeftMenu a {
+  color: #ffffff; /* Kolor tekstu linków na czarny */
+  text-decoration: none; /* Usunięcie podkreślenia linków */
+}
+
+/* Styl dla linków w lewym menu po najechaniu myszką */
+.LeftMenu a:hover {
+  color: #333; /* Kolor tekstu linków po najechaniu myszką */
+  /* Dodaj inne stylizacje, jeśli potrzebujesz */
+}
+
+/* LeftMenu.css */
+.LeftMenu .menu-item {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.LeftMenu .menu-item svg {
+  margin-right: 8px; /* Adjust the margin as needed to control the spacing between icon and text */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Styl dla logo */
+.Logo {
+  width: 50px;
+  height: 50px;
+}
+
+/* Styl dla kontenera logo */
+.LogoContainer {
+  display: flex;
+  align-items: center;
+  margin-left: 40px;
+  justify-content: flex-start; /* Umieść logo po lewej stronie */
+}
+
+.dashboard-tiles {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dashboard-tile {
+  background-color: var(--first);
+  border: 2px solid var(--border-color); /* Oddzielenie komponentów borderem */
+  padding: 20px;
+  margin: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.dashboard-tile:hover {
+  background-color: var(--fourth);
+  box-shadow: 0px 4px 8px var(--box-shadow-color); /* Zwiększenie cienia po najechaniu myszką */
 }
