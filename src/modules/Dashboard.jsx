@@ -1,48 +1,71 @@
 // Dashboard.jsx
 import React from "react";
 import "../App.css";
+import ModuleIcon from "@mui/icons-material/Extension";
 
 function Dashboard({ setSelectedModule }) {
+  const tileData = [
+    {
+      module: "module2",
+      title: "Moduł finanse",
+      description: "Zawiera informacje dotyczące finansów firmy.",
+    },
+    {
+      module: "module3",
+      title: "Moduł HR",
+      description:
+        "Umożliwia zarządzanie zasobami ludzkimi, w tym pracownikami i wynagrodzeniami.",
+    },
+    {
+      module: "module4",
+      title: "Moduł produkcja",
+      description: "Pomaga w zarządzaniu procesami produkcyjnymi firmy.",
+    },
+    {
+      module: "module5",
+      title: "Moduł CRM",
+      description: "Pozwala na zarządzanie relacjami z klientami",
+    },
+    {
+      module: "module6",
+      title: "Moduł logistyka",
+      description:
+        "Zawiera narzędzia do monitorowania i optymalizacji procesów logistycznych.",
+    },
+    {
+      module: "module7",
+      title: "Moduł projekty",
+      description:
+        "Zawiera narzędzia wspierające efektywne zarządzanie projektami.",
+    },
+    {
+      module: "module8",
+      title: "Moduł BI",
+      description: "Analizy danych i raportowanie",
+    },
+    {
+      module: "module9",
+      title: "Moduł dokumenty",
+      description: "Wspiera zarządzanie dokumentami w firmie.",
+    },
+  ];
+
   return (
     <div className="dashboard">
       <h1>Dashboard</h1>
-      <p>Tutaj możesz dodać treść swojego dashboardu.</p>
+      <p>Wybierz moduł</p>
       <div className="dashboard-tiles">
-        {/* Kafelek Modułu 2 */}
-        <div
-          className="dashboard-tile"
-          onClick={() => setSelectedModule("modul2")}
-        >
-          <h2>Moduł 2</h2>
-          <p>Kliknij, aby przejść do Modułu 2</p>
-        </div>
-
-        {/* Kafelek Modułu 3 */}
-        <div
-          className="dashboard-tile"
-          onClick={() => setSelectedModule("modul3")}
-        >
-          <h2>Moduł 3</h2>
-          <p>Kliknij, aby przejść do Modułu 3</p>
-        </div>
-
-        {/* Kafelek Modułu 4 */}
-        <div
-          className="dashboard-tile"
-          onClick={() => setSelectedModule("modul4")}
-        >
-          <h2>Moduł 4</h2>
-          <p>Kliknij, aby przejść do Modułu 4</p>
-        </div>
-
-        {/* Kafelek Modułu 5 */}
-        <div
-          className="dashboard-tile"
-          onClick={() => setSelectedModule("modul5")}
-        >
-          <h2>Moduł 5</h2>
-          <p>Kliknij, aby przejść do Modułu 5</p>
-        </div>
+        {tileData.map((tile, index) => (
+          <div
+            key={index}
+            className="dashboard-tile"
+            onClick={() => setSelectedModule(tile.module)}
+          >
+            <ModuleIcon />
+            <h2>{tile.title}</h2>
+            <p>{tile.description}</p>
+          </div>
+        ))}
       </div>
     </div>
   );

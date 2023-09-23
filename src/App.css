@@ -1,12 +1,17 @@
 /* Kolory główne */
 :root {
-  --first: #fff; /* Pierwszy kolor (biały) */
-  --second: #eee; /* Drugi kolor (jasny szary) */
-  --third: #ccc; /* Trzeci kolor (średni szary) */
-  --fourth: #a3a3a3; /* Czwarty kolor (ciemny szary) */
-  --fifth: #4c4c4c; /* Piąty kolor (bardzo ciemny szary) */
+  --first: #fff;
+  --second: #eee;
+  --third: #ccc;
+  --fourth: #a3a3a3;
+  --fifth: #272727;
   --border-color: black;
-  --box-shadow-color: rgba(0, 0, 0, 0.2); /* Kolor cienia */
+  --box-shadow-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Zastosuj czcionkę "Roboto" dla całej aplikacji */
+body {
+  font-family: "Roboto", sans-serif;
 }
 
 /* Styl ogólny dla aplikacji */
@@ -22,7 +27,7 @@
   flex-direction: column;
   flex-grow: 1;
   background-color: var(--first);
-  color: #333; /* Kolor tekstu dostosowany do tła */
+  color: var(--fifth);
   border-bottom: 1px solid var(--border-color); /* Dodanie borderu na dole */
   box-shadow: 0px 2px 4px var(--box-shadow-color); /* Dodanie cienia */
 }
@@ -42,11 +47,25 @@
 
 /* Styl dla górnego menu */
 .TopMenu {
-  background-color: var(--first);
+  background-color: var(--fifth);
   color: #333; /* Kolor tekstu dostosowany do tła */
   padding: 10px;
   display: flex;
-  border-bottom: 1px solid var(--border-color); /* Dodanie borderu na dole */
+}
+
+/* Styl dla kontenera logo */
+.LogoContainer {
+  display: flex;
+  align-items: center;
+  margin-left: 40px;
+  justify-content: flex-start; /* Umieść logo po lewej stronie */
+  cursor: pointer; /* Display a pointer cursor on hover */
+}
+
+/* Styl dla logo */
+.Logo {
+  width: 50px;
+  height: 50px;
 }
 
 /* Styl dla lewego menu */
@@ -68,14 +87,13 @@
 
 /* Styl dla linków w lewym menu */
 .LeftMenu a {
-  color: #ffffff; /* Kolor tekstu linków na czarny */
-  text-decoration: none; /* Usunięcie podkreślenia linków */
+  color: var(--first);
+  text-decoration: none;
 }
 
 /* Styl dla linków w lewym menu po najechaniu myszką */
 .LeftMenu a:hover {
-  color: #333; /* Kolor tekstu linków po najechaniu myszką */
-  /* Dodaj inne stylizacje, jeśli potrzebujesz */
+  color: var(--third); /* Kolor tekstu linków po najechaniu myszką */
 }
 
 /* LeftMenu.css */
@@ -88,28 +106,26 @@
   margin-right: 8px; /* Adjust the margin as needed to control the spacing between icon and text */
 }
 
-/* Styl dla logo */
-.Logo {
-  width: 50px;
-  height: 50px;
-}
-
-/* Styl dla kontenera logo */
-.LogoContainer {
-  display: flex;
-  align-items: center;
-  margin-left: 40px;
-  justify-content: flex-start; /* Umieść logo po lewej stronie */
+.LeftMenu .copyright {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: var(--first); /* Set the text color to white */
+  font-size: 10px;
 }
 
 .dashboard-tiles {
   display: flex;
+  flex-wrap: wrap; /* Dodanie zawijania na następny wiersz */
   justify-content: space-between;
 }
 
 .dashboard-tile {
+  width: calc(
+    20% - 20px
+  ); /* Ustal szerokość tak, aby były 5 kafelków w rzędzie z odstępem 10px */
   background-color: var(--first);
-  border: 2px solid var(--border-color); /* Oddzielenie komponentów borderem */
+  border: 2px solid var(--border-color);
   padding: 20px;
   margin: 10px;
   cursor: pointer;
@@ -117,6 +133,34 @@
 }
 
 .dashboard-tile:hover {
-  background-color: var(--fourth);
-  box-shadow: 0px 4px 8px var(--box-shadow-color); /* Zwiększenie cienia po najechaniu myszką */
+  -webkit-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+  -moz-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+  box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+}
+
+/* Dodaj styl dla aktualnej daty */
+.CurrentDate {
+  flex-grow: 1; /* Rozciągnij element na całą dostępną szerokość po lewej stronie logo */
+  display: flex; /* Ustaw display na flex */
+  align-items: center; /* Wyśrodkuj w pionie */
+  justify-content: flex-end; /* Wyśrodkuj w poziomie (po prawej stronie) */
+  padding-right: 20px; /* Dodaj odstęp z prawej strony */
+  font-size: 14px; /* Ustaw rozmiar czcionki według własnych preferencji */
+  color: var(--first); /* Kolor tekstu dostosowany do tła */
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .App-content {
+    padding: 10px; /* Adjust padding for smaller screens */
+  }
+
+  .LeftMenu {
+    width: 100%; /* Full width for mobile */
+    display: none; /* Hide the left menu on mobile */
+  }
+
+  .dashboard-tile {
+    width: calc(50% - 20px); /* Two tiles per row on mobile */
+  }
 }
