@@ -1,0 +1,71 @@
+/* Module3.css */
+
+.module3 {
+  text-align: center;
+  padding: 20px;
+}
+
+.module3__title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.module3__subtitle {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.module3__form {
+  margin: 20px auto;
+  max-width: 400px;
+  background-color: var(--first); /* Use variable for background color */
+  border: 1px solid var(--border-color); /* Use variable for border color */
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px var(--box-shadow-color); /* Use variable for box shadow color */
+}
+
+.module3__input-group {
+  margin-bottom: 10px;
+}
+
+.module3__input {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid var(--border-color); /* Use variable for border color */
+  border-radius: 5px;
+}
+
+.module3__button {
+  background-color: var(--third); /* Use variable for background color */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.module3__button:hover {
+  background-color: var(
+    --fourth
+  ); /* Use variable for background color on hover */
+}
+
+.module3__list {
+  margin-top: 40px;
+}
+
+.module3__employee-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.module3__employee-item {
+  background-color: var(--fifth); /* Use variable for background color */
+  border: 1px solid var(--border-color); /* Use variable for border color */
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px var(--box-shadow-color); /* Use variable for box shadow color */
+}

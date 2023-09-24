@@ -1,0 +1,106 @@
+/* Module5.css */
+
+.crm {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.crm__header {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.crm__form {
+  margin: 20px auto;
+  max-width: 400px;
+  background-color: var(--first); /* Use variable for background color */
+  border: 1px solid var(--border-color); /* Use variable for border color */
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px var(--box-shadow-color); /* Use variable for box shadow color */
+}
+
+.crm__input {
+  width: 90%;
+  margin-bottom: 10px;
+  padding: 12px;
+  border: 1px solid var(--border-color); /* Use variable for border color */
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.crm__button {
+  background-color: var(--third); /* Use variable for background color */
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.crm__button:hover {
+  background-color: var(
+    --fourth
+  ); /* Use variable for background color on hover */
+}
+
+.crm__contacts {
+  list-style: none;
+  padding: 0;
+}
+
+.crm__contact {
+  background-color: var(--first); /* Use variable for background color */
+  border: 1px solid var(--border-color); /* Use variable for border color */
+  border-radius: 5px;
+  padding: 12px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+}
+
+.crm__delete-button {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.crm__delete-button:hover {
+  background-color: #ff3333;
+}
+
+.crm__edit-button {
+  background-color: #ffc107;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-left: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.crm__edit-button:hover {
+  background-color: #ffae00;
+}
+
+.crm__contacts input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border-color); /* Use variable for border color */
+  border-radius: 5px;
+  font-size: 16px;
+}

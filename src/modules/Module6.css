@@ -1,0 +1,106 @@
+/* Module6.css */
+
+.module6 {
+  text-align: center;
+  padding: 20px;
+}
+
+.module6__title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: var(--fifth); /* Use variable for text color */
+}
+
+.module6__subtitle {
+  font-size: 20px;
+  margin-top: 20px;
+  color: #666;
+}
+
+.module6__form {
+  margin: 20px auto;
+  max-width: 400px;
+  background-color: var(--first); /* Use variable for background color */
+  border: 1px solid var(--border-color); /* Use variable for border color */
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px var(--box-shadow-color); /* Use variable for box shadow color */
+}
+
+.module6__input-group {
+  margin-bottom: 20px;
+}
+
+.module6__input {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid var(--border-color); /* Use variable for border color */
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.module6__button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: var(--third); /* Use variable for background color */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.module6__button:hover {
+  background-color: var(
+    --fourth
+  ); /* Use variable for background color on hover */
+}
+
+.module6__list {
+  margin-top: 40px;
+}
+
+.module6__order-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.module6__order-item {
+  border: 1px solid var(--border-color); /* Use variable for border color */
+  background-color: var(--first); /* Use variable for background color */
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.module6__status-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.module6__status-button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.module6__status-button--in-progress {
+  background-color: #ffc107;
+  color: var(--fifth); /* Use variable for text color */
+}
+
+.module6__status-button--shipped {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.module6__status-button--delivered {
+  background-color: #17a2b8;
+  color: #fff;
+}

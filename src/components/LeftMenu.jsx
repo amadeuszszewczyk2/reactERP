@@ -33,14 +33,6 @@ function LeftMenu({ setSelectedModule }) {
           </li>
         ))}
       </ul>
-      <p className="copyright">
-        Created by Amadeusz
-        <br></br>
-        Szewczyk.
-        <br></br>
-        <br></br>
-        All rights reserved.
-      </p>
     </div>
   );
 }

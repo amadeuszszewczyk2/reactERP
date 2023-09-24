@@ -1,0 +1,109 @@
+/* Module7.css */
+
+.module7 {
+  text-align: center;
+  padding: 20px;
+}
+
+.module7__title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: var(--fifth); /* Use variable for text color */
+}
+
+.module7__subtitle {
+  font-size: 20px;
+  margin-top: 20px;
+  color: #666;
+}
+
+.module7__form {
+  margin: 20px auto;
+  max-width: 400px;
+  background-color: var(--first); /* Use variable for background color */
+  border: 1px solid var(--border-color); /* Use variable for border color */
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px var(--box-shadow-color); /* Use variable for box shadow color */
+}
+
+.module7__input-group {
+  margin-bottom: 20px;
+}
+
+.module7__input {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid var(--border-color); /* Use variable for border color */
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.module7__button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: var(--third); /* Use variable for background color */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.module7__button:hover {
+  background-color: var(
+    --fourth
+  ); /* Use variable for background color on hover */
+}
+
+.module7__list {
+  margin-top: 40px;
+}
+
+.module7__project-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.module7__project-item {
+  border: 1px solid var(--border-color); /* Use variable for border color */
+  background-color: var(--first); /* Use variable for background color */
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.module7__status-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.module7__status-button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.module7__status-button--in-progress {
+  background-color: #ffc107;
+  color: var(--fifth); /* Use variable for text color */
+}
+
+.module7__status-button--in-progress:hover {
+  background-color: #ffad00;
+}
+
+.module7__status-button--completed {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.module7__status-button--completed:hover {
+  background-color: #1f8e39;
+}

@@ -1,79 +1,82 @@
-/* Kolory główne */
 :root {
   --first: #fff;
-  --second: #eee;
-  --third: #ccc;
-  --fourth: #a3a3a3;
-  --fifth: #272727;
+  --second: #ffc53f;
+  --third: #fe3756;
+  --fourth: #17a2b8;
+  --fifth: #000000;
   --border-color: black;
   --box-shadow-color: rgba(0, 0, 0, 0.2);
 }
 
-/* Zastosuj czcionkę "Roboto" dla całej aplikacji */
 body {
   font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-/* Styl ogólny dla aplikacji */
 .App {
   display: flex;
   flex-direction: column;
   height: 100vh;
 }
 
-/* Styl dla nagłówka aplikacji */
 .App-header {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   background-color: var(--first);
   color: var(--fifth);
-  border-bottom: 1px solid var(--border-color); /* Dodanie borderu na dole */
-  box-shadow: 0px 2px 4px var(--box-shadow-color); /* Dodanie cienia */
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0px 2px 4px var(--box-shadow-color);
 }
 
-/* Styl dla głównego obszaru aplikacji */
 .App-main {
   display: flex;
   flex-grow: 1;
 }
 
-/* Styl dla treści aplikacji */
 .App-content {
   flex-grow: 1;
   padding: 20px;
   margin-top: -20px;
 }
 
-/* Styl dla górnego menu */
 .TopMenu {
   background-color: var(--fifth);
-  color: #333; /* Kolor tekstu dostosowany do tła */
-  padding: 10px;
+  color: #333;
+  padding: 5px;
   display: flex;
+  justify-content: space-between; /* Użyj justify-content: space-between */
+  align-items: center;
 }
 
-/* Styl dla kontenera logo */
+.CurrentDate,
+.Location,
+.Weather,
+.BitcoinRate {
+  font-size: 14px;
+  color: var(--first);
+  margin-left: 10px; /* Dodatkowy odstęp między elementami, jeśli jest potrzebny */
+  margin-right: 10px; /* Przesunięcie na prawo */
+}
+
 .LogoContainer {
   display: flex;
   align-items: center;
-  margin-left: 40px;
-  justify-content: flex-start; /* Umieść logo po lewej stronie */
-  cursor: pointer; /* Display a pointer cursor on hover */
+  margin-left: 32px;
+  justify-content: flex-start;
+  cursor: pointer;
 }
 
-/* Styl dla logo */
 .Logo {
   width: 50px;
   height: 50px;
 }
 
-/* Styl dla lewego menu */
 .LeftMenu {
   background-color: var(--fifth);
-  width: 180px; /* Zwiększenie szerokości menu */
+  width: 100px;
   padding: 10px;
-  border-right: 1px solid var(--border-color); /* Oddzielenie menu borderem */
 }
 
 .LeftMenu ul {
@@ -85,51 +88,46 @@ body {
   margin: 10px 0;
 }
 
-/* Styl dla linków w lewym menu */
 .LeftMenu a {
   color: var(--first);
   text-decoration: none;
 }
 
-/* Styl dla linków w lewym menu po najechaniu myszką */
 .LeftMenu a:hover {
-  color: var(--third); /* Kolor tekstu linków po najechaniu myszką */
+  color: var(--third);
 }
 
-/* LeftMenu.css */
 .LeftMenu .menu-item {
   display: flex;
   align-items: center;
 }
 
 .LeftMenu .menu-item svg {
-  margin-right: 8px; /* Adjust the margin as needed to control the spacing between icon and text */
+  margin-right: 8px;
 }
 
-.LeftMenu .copyright {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  color: var(--first); /* Set the text color to white */
-  font-size: 10px;
+.dashboard-title {
+  color: var(--third);
 }
 
 .dashboard-tiles {
   display: flex;
-  flex-wrap: wrap; /* Dodanie zawijania na następny wiersz */
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
 .dashboard-tile {
-  width: calc(
-    20% - 20px
-  ); /* Ustal szerokość tak, aby były 5 kafelków w rzędzie z odstępem 10px */
+  width: calc(20% - 20px);
   background-color: var(--first);
-  border: 2px solid var(--border-color);
+  border: 2px solid var(--fourth);
   padding: 20px;
   margin: 10px;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .dashboard-tile:hover {
@@ -138,52 +136,66 @@ body {
   box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
 }
 
-/* Dodaj styl dla aktualnej daty */
-.CurrentDate {
-  flex-grow: 1; /* Rozciągnij element na całą dostępną szerokość po lewej stronie logo */
-  display: flex; /* Ustaw display na flex */
-  align-items: center; /* Wyśrodkuj w pionie */
-  justify-content: flex-end; /* Wyśrodkuj w poziomie (po prawej stronie) */
-  padding-right: 20px; /* Dodaj odstęp z prawej strony */
-  font-size: 14px; /* Ustaw rozmiar czcionki według własnych preferencji */
-  color: var(--first); /* Kolor tekstu dostosowany do tła */
-}
-
-/* Mobile Styles */
-@media (max-width: 768px) {
-  .App-content {
-    padding: 10px; /* Adjust padding for smaller screens */
-  }
-
-  .LeftMenu {
-    width: 100%; /* Full width for mobile */
-    display: none; /* Hide the left menu on mobile */
-  }
-
-  .dashboard-tile {
-    width: calc(50% - 20px); /* Two tiles per row on mobile */
-  }
-}
-
-/* Styl przycisków */
 .button {
   display: inline-block;
-  padding: 10px 0; /* Równa długość przycisków, usuwając padding poziomy */
+  padding: 10px 0;
   background-color: var(--fifth);
-  color: white; /* Kolor tekstu na przycisku jest biały */
-  border: none; /* Usuń obramowanie przycisku */
-  width: 100%; /* Pełna szerokość przycisku */
-  text-align: left; /* Wyrównaj tekst do lewej strony */
+  color: white;
+  border: none;
+  width: 100%;
+  text-align: left;
   text-decoration: none;
   cursor: pointer;
   font-size: 14px;
   transition: background-color 0.3s ease-in-out;
 }
 
-/* Styl przycisku po najechaniu myszką */
 .button:hover {
-  background-color: var(
-    --fourth
-  ); /* Kolor tła przycisku po najechaniu myszką */
-  color: white; /* Kolor tekstu na przycisku po najechaniu myszką */
+  background-color: var(--fourth);
+  color: white;
+}
+
+.back_button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--fifth);
+  color: white;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease-in-out;
+  margin-top: 10px;
+}
+
+.back_button:hover {
+  background-color: var(--fourth);
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .App-content {
+    padding: 10px;
+  }
+
+  .LeftMenu {
+    width: 100%;
+    display: none;
+  }
+
+  .dashboard-tiles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dashboard-tile {
+    width: calc(80%);
+    margin: 10px 0;
+  }
+
+  .back_button {
+    margin-top: 20px;
+  }
 }

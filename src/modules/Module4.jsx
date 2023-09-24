@@ -1,27 +1,117 @@
 // Module4.jsx
-import React from "react";
+// Moduł produkcja
+import React, { useState } from "react";
+import "./Module4.css";
 
 function Module4() {
-  // Funkcja obsługująca przycisk "Powrót"
   const handleGoBack = () => {
-    // Użyj window.location do przekierowania do ścieżki dashboard
     window.location.href = "/dashboard";
   };
+
+  const [productionTasks, setProductionTasks] = useState([]);
+  const [newTask, setNewTask] = useState("");
+  const [taskStatus, setTaskStatus] = useState("all"); // Dodatkowa funkcjonalność 1: Status zadania
+
+  const handleAddTask = () => {
+    if (newTask) {
+      setProductionTasks([
+        ...productionTasks,
+        { description: newTask, completed: false },
+      ]);
+      setNewTask("");
+    }
+  };
+
+  // Dodatkowa funkcjonalność 1: Oznacz zadanie jako ukończone/nieukończone
+  const handleToggleTaskStatus = (index) => {
+    const updatedTasks = [...productionTasks];
+    updatedTasks[index].completed = !updatedTasks[index].completed;
+    setProductionTasks(updatedTasks);
+  };
+
+  // Dodatkowa funkcjonalność 2: Filtruj zadania ze względu na status
+  const filteredTasks =
+    taskStatus === "all"
+      ? productionTasks
+      : productionTasks.filter(
+          (task) => task.completed === (taskStatus === "completed")
+        );
 
   return (
     <>
       <div>
-        <button onClick={handleGoBack}>Powrót</button>
+        <button className="back_button" onClick={handleGoBack}>
+          Powrót
+        </button>
       </div>
       <div className="module4">
-        <h1>Moduł produkcja</h1>
-        <div className="module-description">
-          <p>Funkcjonalności, które pojawiają się w tym module:</p>
-          <ul>
-            <li>Zarządzanie procesem produkcji</li>
-            <li>Kontrola stanu magazynu surowców i gotowych produktów</li>
-            <li>Planowanie produkcji i harmonogramowanie zleceń</li>
-            <li>Zarządzanie pracownikami w dziale produkcji</li>
+        <h1 className="module4__title">Moduł produkcja</h1>
+        <div className="module4__form">
+          <h2 className="module4__subtitle">Dodaj zadanie produkcyjne</h2>
+          <div className="module4__input-group">
+            <input
+              className="module4__input"
+              type="text"
+              placeholder="Opis zadania"
+              value={newTask}
+              onChange={(e) => setNewTask(e.target.value)}
+            />
+            <button className="module4__button" onClick={handleAddTask}>
+              Dodaj zadanie
+            </button>
+          </div>
+        </div>
+        <div className="module4__filter">
+          <h2 className="module4__subtitle">Filtruj zadania</h2>
+          <div className="module4__filter-group">
+            <label>
+              <input
+                type="radio"
+                name="taskStatus"
+                value="all"
+                checked={taskStatus === "all"}
+                onChange={() => setTaskStatus("all")}
+              />
+              Wszystkie
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="taskStatus"
+                value="completed"
+                checked={taskStatus === "completed"}
+                onChange={() => setTaskStatus("completed")}
+              />
+              Ukończone
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="taskStatus"
+                value="uncompleted"
+                checked={taskStatus === "uncompleted"}
+                onChange={() => setTaskStatus("uncompleted")}
+              />
+              Nieukończone
+            </label>
+          </div>
+        </div>
+        <div className="module4__list">
+          <h2 className="module4__subtitle">Lista zadań produkcyjnych</h2>
+          <ul className="module4__task-list">
+            {filteredTasks.map((task, index) => (
+              <li key={index} className="module4__task-item">
+                <span
+                  className={`module4__task-status ${
+                    task.completed ? "completed" : ""
+                  }`}
+                  onClick={() => handleToggleTaskStatus(index)}
+                >
+                  {task.completed ? "✔" : "○"}
+                </span>
+                {task.description}
+              </li>
+            ))}
           </ul>
         </div>
       </div>
