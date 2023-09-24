@@ -1,70 +1,136 @@
-# Getting Started with Create React App
+# React ERP
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is an evolving React-based Enterprise Resource Planning (ERP) system that provides fundamental functionalities for managing various aspects of a company's operations.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Overview](#overview)
+- [Demo](#demo)
+- [Mobile Version](#mobile-version)
+- [Data Interaction](#data-interaction)
+- [Basic Functionalities](#basic-functionalities)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
 
-### `npm start`
+## Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This application serves as an ERP system, offering core modules for efficient management of a company's operations. The system includes the following modules:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Dashboard
 
-### `npm test`
+📊 Choose a module
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Finance Module
 
-### `npm run build`
+💰 Contains information related to the company's finances.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Human Resources Module
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+👥 Allows management of human resources, including employees and compensation.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Production Module
 
-### `npm run eject`
+🏭 Aids in managing production processes within the company.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### CRM Module (Customer Relationship Management)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+🤝 Facilitates the management of customer relationships.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Logistics Module
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+🚚 Includes tools for monitoring logistics processes.
 
-## Learn More
+### Projects Module
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+📆 Contains tools to support efficient project management.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Business Intelligence (BI) Module
 
-### Code Splitting
+📈 Data analysis and reporting capabilities.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Document Management Module
 
-### Analyzing the Bundle Size
+📄 Supports document management within the company.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Demo
 
-### Making a Progressive Web App
+You can access the application online at [https://reacterp-psi.vercel.app](https://reacterp-psi.vercel.app).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Mobile Version
 
-### Advanced Configuration
+The application is also available in a mobile-friendly version for on-the-go access.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Data Interaction
 
-### Deployment
+At the moment, the application does not interact with an external database. It operates as a standalone system.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Basic Functionalities
 
-### `npm run build` fails to minify
+This ERP system provides essential functionalities for effective company management.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Getting Started
+
+To run this application locally, follow the instructions below.
+
+### Prerequisites
+
+Make sure you have the following prerequisites installed:
+
+- Node.js and npm (Node Package Manager)
+
+### Installation
+
+1. Clone the repository to your local machine:
+
+   ```bash
+   git clone https://github.com/your-username/react-modular-app.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd react-modular-app
+   ```
+
+3. Install the required dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Start the development server:
+
+   ```bash
+   npm start
+   ```
+
+This will start the application locally. You can access it in your web browser at `http://localhost:3000`.
+
+## Usage
+
+Once the application is running, you can:
+
+- Click on modules in the left menu to switch between them.
+- Click on module tiles on the dashboard to navigate to specific modules.
+
+Feel free to explore the modules and their functionalities.
+
+## Contributing
+
+Contributions to this project are welcome! If you'd like to contribute, please follow these guidelines:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them with descriptive messages.
+4. Push your changes to your fork.
+5. Submit a pull request to the main repository.
+
+## License
+
+© Amadeusz Szewczyk
+
+Comments and contributions are welcome as we continue to develop and enhance this ERP system.

@@ -29,8 +29,7 @@ function Dashboard({ setSelectedModule }) {
     {
       module: "module6",
       title: "Moduł logistyka",
-      description:
-        "Zawiera narzędzia do monitorowania i optymalizacji procesów logistycznych.",
+      description: "Zawiera narzędzia do monitorowania procesów logistycznych.",
     },
     {
       module: "module7",
@@ -41,7 +40,7 @@ function Dashboard({ setSelectedModule }) {
     {
       module: "module8",
       title: "Moduł BI",
-      description: "Analizy danych i raportowanie",
+      description: "Analiza danych i raportowanie",
     },
     {
       module: "module9",
