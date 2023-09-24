@@ -5,6 +5,10 @@ import jsPDF from "jspdf";
 import "./Module5.css";
 
 function Module5() {
+  const handleGoBack = () => {
+    window.location.href = "/dashboard";
+  };
+
   const [contacts, setContacts] = useState([]);
   const [newContact, setNewContact] = useState({
     name: "",
@@ -115,141 +119,149 @@ function Module5() {
     : contacts;
 
   return (
-    <div className="module5">
-      <div className="crm">
-        <h2 className="crm__header">Moduł CRM</h2>
-        <div className="crm__form">
-          <input
-            className="crm__input"
-            type="text"
-            name="name"
-            placeholder="Imię"
-            value={newContact.name}
-            onChange={handleInputChange}
-          />
-          <input
-            className="crm__input"
-            type="text"
-            name="surname"
-            placeholder="Nazwisko"
-            value={newContact.surname}
-            onChange={handleInputChange}
-          />
-          <input
-            className="crm__input"
-            type="email"
-            name="email"
-            placeholder="Email"
-            value={newContact.email}
-            onChange={handleInputChange}
-          />
-          <input
-            className="crm__input"
-            type="tel"
-            name="phone"
-            placeholder="Telefon"
-            value={newContact.phone}
-            onChange={handleInputChange}
-          />
-          <textarea
-            className="crm__input"
-            name="notes"
-            placeholder="Notatki"
-            value={newContact.notes}
-            onChange={handleInputChange}
-          ></textarea>
-          <button className="crm__button" onClick={handleAddContact}>
-            Dodaj Kontakt
-          </button>
-        </div>
-        <div>
-          <h3>Kontakty</h3>
-          <input
-            className="crm__input"
-            type="text"
-            placeholder="Szukaj"
-            value={searchText}
-            onChange={(e) => setSearchText(e.target.value)}
-          />
-          <button
-            className={`crm__button ${sortOrder === "asc" ? "asc" : "desc"}`}
-            onClick={handleSortContacts}
-          >
-            Sortuj {sortOrder === "asc" ? "rosnąco" : "malejąco"}
-          </button>
-          <ul className="crm__contacts">
-            {filteredContacts.map((contact) => (
-              <li className="crm__contact" key={contact.email}>
-                <div>
+    <>
+      <button className="back_button" onClick={handleGoBack}>
+        Powrót
+      </button>
+
+      <div className="module5">
+        <div className="crm">
+          <h2 className="crm__header">Moduł CRM</h2>
+          <div className="crm__form">
+            <input
+              className="crm__input"
+              type="text"
+              name="name"
+              placeholder="Imię"
+              value={newContact.name}
+              onChange={handleInputChange}
+            />
+            <input
+              className="crm__input"
+              type="text"
+              name="surname"
+              placeholder="Nazwisko"
+              value={newContact.surname}
+              onChange={handleInputChange}
+            />
+            <input
+              className="crm__input"
+              type="email"
+              name="email"
+              placeholder="Email"
+              value={newContact.email}
+              onChange={handleInputChange}
+            />
+            <input
+              className="crm__input"
+              type="tel"
+              name="phone"
+              placeholder="Telefon"
+              value={newContact.phone}
+              onChange={handleInputChange}
+            />
+            <textarea
+              className="crm__input"
+              name="notes"
+              placeholder="Notatki"
+              value={newContact.notes}
+              onChange={handleInputChange}
+            ></textarea>
+            <button className="crm__button" onClick={handleAddContact}>
+              Dodaj Kontakt
+            </button>
+          </div>
+          <div>
+            <h3>Kontakty</h3>
+            <input
+              className="crm__input"
+              type="text"
+              placeholder="Szukaj"
+              value={searchText}
+              onChange={(e) => setSearchText(e.target.value)}
+            />
+            <button
+              className={`crm__button ${sortOrder === "asc" ? "asc" : "desc"}`}
+              onClick={handleSortContacts}
+            >
+              Sortuj {sortOrder === "asc" ? "rosnąco" : "malejąco"}
+            </button>
+            <ul className="crm__contacts">
+              {filteredContacts.map((contact) => (
+                <li className="crm__contact" key={contact.email}>
                   <div>
-                    {contact.name} {contact.surname}
+                    <div>
+                      {contact.name} {contact.surname}
+                    </div>
+                    <div>Email: {contact.email}</div>
+                    <div>Telefon: {contact.phone}</div>
+                    <div>Notatki: {contact.notes}</div>
+                    {contact.groups.length > 0 && (
+                      <div>Grupy: {contact.groups.join(", ")}</div>
+                    )}
                   </div>
-                  <div>Email: {contact.email}</div>
-                  <div>Telefon: {contact.phone}</div>
-                  <div>Notatki: {contact.notes}</div>
-                  {contact.groups.length > 0 && (
-                    <div>Grupy: {contact.groups.join(", ")}</div>
-                  )}
-                </div>
-                <div>
-                  <button
-                    className="crm__delete-button"
-                    onClick={() => handleDeleteContact(contact.email)}
-                  >
-                    Usuń
-                  </button>
-                  <select
-                    value={selectedGroup}
-                    onChange={(e) => handleAddToGroup(contact, e.target.value)}
-                  >
-                    <option value="">Dodaj do grupy</option>
-                    {groups.map((group) => (
-                      <option key={group} value={group}>
-                        {group}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <h3>Grupy</h3>
-          <input
-            className="crm__input"
-            type="text"
-            placeholder="Nowa Grupa"
-            value={newGroupName}
-            onChange={(e) => setNewGroupName(e.target.value)}
-          />
-          <button className="crm__button" onClick={handleCreateGroup}>
-            Utwórz Grupę
-          </button>
-          <ul>
-            {groups.map((groupName) => (
-              <li key={groupName}>
-                <strong>{groupName}</strong>
-                <ul>
-                  {contacts
-                    .filter((contact) => contact.groups.includes(groupName))
-                    .map((contact) => (
-                      <li key={contact.email}>
-                        {contact.name} {contact.surname}
-                      </li>
-                    ))}
-                </ul>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <button className="crm__button" onClick={handleExportToPDF}>
-            Eksportuj do PDF
-          </button>
+                  <div>
+                    <button
+                      className="crm__delete-button"
+                      onClick={() => handleDeleteContact(contact.email)}
+                    >
+                      Usuń
+                    </button>
+                    <select
+                      value={selectedGroup}
+                      onChange={(e) =>
+                        handleAddToGroup(contact, e.target.value)
+                      }
+                    >
+                      <option value="">Dodaj do grupy</option>
+                      {groups.map((group) => (
+                        <option key={group} value={group}>
+                          {group}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h3>Grupy</h3>
+            <input
+              className="crm__input"
+              type="text"
+              placeholder="Nowa Grupa"
+              value={newGroupName}
+              onChange={(e) => setNewGroupName(e.target.value)}
+            />
+            <button className="crm__button" onClick={handleCreateGroup}>
+              Utwórz Grupę
+            </button>
+            <ul>
+              {groups.map((groupName) => (
+                <li key={groupName}>
+                  <strong>{groupName}</strong>
+                  <ul>
+                    {contacts
+                      .filter((contact) => contact.groups.includes(groupName))
+                      .map((contact) => (
+                        <li key={contact.email}>
+                          {contact.name} {contact.surname}
+                        </li>
+                      ))}
+                  </ul>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <button className="crm__button" onClick={handleExportToPDF}>
+              Eksportuj do PDF
+            </button>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
