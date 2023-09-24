@@ -62,7 +62,7 @@
 }
 
 .module3__employee-item {
-  background-color: var(--fifth); /* Use variable for background color */
+  background-color: var(--first); /* Use variable for background color */
   border: 1px solid var(--border-color); /* Use variable for border color */
   padding: 10px;
   margin-bottom: 10px;

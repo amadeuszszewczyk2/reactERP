@@ -60,7 +60,7 @@
 }
 
 .module2__invoice-item {
-  background-color: var(--fifth);
+  background-color: var(--first);
   border: 1px solid var(--border-color);
   padding: 10px;
   margin-bottom: 10px;
