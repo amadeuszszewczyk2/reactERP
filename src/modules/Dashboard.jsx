@@ -1,6 +1,5 @@
 // Dashboard.jsx
 import React from "react";
-import "../App.css";
 import ModuleIcon from "@mui/icons-material/Extension";
 
 function Dashboard({ setSelectedModule }) {

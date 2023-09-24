@@ -4,6 +4,7 @@
   --third: #fe3756;
   --fourth: #17a2b8;
   --fifth: #000000;
+  --gray: #808080;
   --border-color: black;
   --box-shadow-color: rgba(0, 0, 0, 0.2);
 }
@@ -33,6 +34,7 @@ body {
 .App-main {
   display: flex;
   flex-grow: 1;
+  background: var(--first);
 }
 
 .App-content {
@@ -42,8 +44,8 @@ body {
 }
 
 .TopMenu {
-  background-color: var(--fifth);
-  color: #333;
+  background-color: var(--first);
+  color: var(--fifth);
   padding: 5px;
   display: flex;
   justify-content: space-between; /* Użyj justify-content: space-between */
@@ -55,7 +57,7 @@ body {
 .Weather,
 .BitcoinRate {
   font-size: 14px;
-  color: var(--first);
+  color: black; /* Change text color to black */
   margin-left: 10px; /* Dodatkowy odstęp między elementami, jeśli jest potrzebny */
   margin-right: 10px; /* Przesunięcie na prawo */
 }
@@ -74,7 +76,7 @@ body {
 }
 
 .LeftMenu {
-  background-color: var(--fifth);
+  background-color: var(--first);
   width: 100px;
   padding: 10px;
 }
@@ -91,15 +93,20 @@ body {
 .LeftMenu a {
   color: var(--first);
   text-decoration: none;
+  transition: color 0.3s ease-in-out; /* Add a transition for color change */
 }
 
 .LeftMenu a:hover {
-  color: var(--third);
+  color: var(
+    --third
+  ); /* Change the text color to the third variable on hover */
+  background-color: transparent; /* Remove the background color change */
 }
 
 .LeftMenu .menu-item {
   display: flex;
   align-items: center;
+  margin-right: 10px;
 }
 
 .LeftMenu .menu-item svg {
@@ -107,7 +114,7 @@ body {
 }
 
 .dashboard-title {
-  color: var(--third);
+  color: var(--fifth);
 }
 
 .dashboard-tiles {
@@ -119,7 +126,7 @@ body {
 .dashboard-tile {
   width: calc(20% - 20px);
   background-color: var(--first);
-  border: 2px solid var(--fourth);
+  border: 2px solid var(--gray);
   padding: 20px;
   margin: 10px;
   cursor: pointer;
@@ -139,8 +146,8 @@ body {
 .button {
   display: inline-block;
   padding: 10px 0;
-  background-color: var(--fifth);
-  color: white;
+  background-color: var(--first);
+  color: var(--fifth);
   border: none;
   width: 100%;
   text-align: left;
@@ -151,8 +158,7 @@ body {
 }
 
 .button:hover {
-  background-color: var(--fourth);
-  color: white;
+  color: var(--gray);
 }
 
 .back_button {
